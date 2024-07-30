@@ -4,7 +4,7 @@ import logo  from "../../assest/images/Rectangle.png";
 import { RiLinkedinFill } from "react-icons/ri";
 import { AiOutlineWhatsApp, AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
 
-const socialLiinks =[
+const socialLinks = [
   {
     path: "/",
     icon: <AiOutlineWhatsApp className="group-hover:text-white w-4 h-5:"/>
@@ -19,7 +19,7 @@ const socialLiinks =[
   },
 ];
 
-const  quickLinks01 =[
+const quickLinks01 = [
   {
     path: "/Home",
     display: "Home",
@@ -38,7 +38,7 @@ const  quickLinks01 =[
   },
 ];
 
-const  quickLinks02 =[
+const quickLinks02 = [
   {
     path: "/find-a-doctor",
     display: "Find a Doctor",
@@ -53,85 +53,76 @@ const  quickLinks02 =[
   },
   {
     path: "/",
-    display: "Get a Opinion",
+    display: "Get an Opinion",
   },
 ];
-const  quickLinks03 =[
+
+const quickLinks03 = [
   {
     path: "/contact",
     display: "Contact",
   },
- 
 ];
 
 const Footer = () => {
-const year = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="pb-16 pt-10">
+    <footer className="pb-16 pt-10 bg-blue-100">
       <div className="container">
         <div className="flex justify-between flex-col md:flex-row flex-wrap gap-[30px]">
           <div>
-            <img src={ logo } alt="" />
-            <p className="text-[16px] leading-7 font-[400] text-cyan-800  mt-4">Sahanya Medicare</p>
+            <img src={logo} alt="" />
+            <p className="text-[16px] leading-7 font-[400] text-cyan-800 mt-4">Sahanya Medicare</p>
 
             <div className="flex items-center gap-3 mt-4">
-              {socialLiinks.map((link, index) => (
+              {socialLinks.map((link, index) => (
                 <Link to={link.path} key={index} 
-                className=" w-9 h-9 border border-solid border-[#181A1E] rounded-full flex items-center justify-center group hover:bg-primaryColor
-                hover:border-none">
+                  className="w-9 h-9 border border-solid border-[#181A1E] rounded-full flex items-center justify-center group hover:bg-primaryColor hover:border-none">
                   {link.icon}
                 </Link>
               ))}
             </div>
           </div>
 
+          <div>
+            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">Quick Links</h2>
+            <ul>
+              {quickLinks01.map((item, index) => (
+                <li key={index} className="mb-4">
+                  <Link to={item.path} className="text-[16px] leading-7 font-[400] text-textColor">
+                    {item.display}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
-            <h2 className="text-[20px] leading-[30px] font-[700] md-6 text-headingColor">Quick Links</h2>
+            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">Quick Links</h2>
+            <ul>
+              {quickLinks02.map((item, index) => (
+                <li key={index} className="mb-4">
+                  <Link to={item.path} className="text-[16px] leading-7 font-[400] text-textColor">
+                    {item.display}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul>
-            {quickLinks01.map((item, index)=>(
-              <li key={index} className="mb-4">
-                <Link to={item.path} className="text-[16px] leading-7 font-[400] text-textColor"
-                >
-                  {item.diplay}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
 
-        <div>
-            <h2 className="text-[20px] leading-[30px] font-[700] md-6 text-headingColor">Quick Links</h2>
-          
-          <ul>
-            {quickLinks02.map((item, index)=>(
-              <li key={index} className="mb-4">
-                <Link to={item.path} className="text-[16px] leading-7 font-[400] text-textColor"
-                >
-                  {item.diplay}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        
-
-        
-            <h2 className="text-[20px] leading-[30px] font-[700] md-6 text-headingColor">Quick Links</h2>
-          </div>
           <div>
-          <ul>
-            {quickLinks03
-            .map((item, index)=>(
-              <li key={index} className="mb-4">
-                <Link to={item.path} className="text-[16px] leading-7 font-[400] text-textColor"
-                >
-                  {item.diplay}
-                </Link>
-              </li>
-            ))}
-          </ul>
+            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">Quick Links</h2>
+            <ul>
+              {quickLinks03.map((item, index) => (
+                <li key={index} className="mb-4">
+                  <Link to={item.path} className="text-[16px] leading-7 font-[400] text-textColor">
+                    {item.display}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
